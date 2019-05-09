@@ -1,4 +1,139 @@
-/* #242e41; */
+.menu {
+  position: fixed;
+  top: 70px;
+  width: 190px;
+  height: 570px;
+  border-radius: 0.4em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #97a6b7;
+  background-color: #242e41;
+  visibility: hidden;
+  transform: translate3d(-100%, 0, 0);
+  transition: all 0.4s ease-out;
+}
+.menu.show {
+  visibility: visible;
+  transform: translate3d(13.6%, 0, 0);
+}
+.menu-header {
+  padding-top: 50px;
+  border-radius: 0.4em;
+  height: 33%;
+  text-align: center;
+  background-color: #242e41;
+}
+.menu-header .header-avatar {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: url(../img/cadent-logo-80x80.png);
+}
+.menu-header .header-avatar:hover {
+  cursor: pointer;
+}
+.menu-header .header-home-select .select-home-name {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+.menu-header .header-home-select .select-home-address {
+  margin: 0;
+  font-size: 12px;
+  font-weight: lighter;
+}
+.menu-header .header-home-select .select-arrow-down {
+  position: absolute;
+  right: 17.5%;
+  bottom: 71.2%;
+  fill: #1492f6;
+}
+.menu-header .header-home-select .select-arrow-down:hover {
+  cursor: pointer;
+}
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  height: 67%;
+  overflow: hidden;
+  list-style: none;
+}
+.menu-nav .nav-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  transform: translate3d(-600px, 0, 0);
+  transition: all 0.4s ease-out;
+}
+.menu-nav .nav-item.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-nav .nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 100%;
+  height: 100%;
+  color: #97a6b7;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.4s ease-out;
+}
+.menu-nav .nav-link .link-highlight-bar {
+  margin-right: 20px;
+  height: 100%;
+  width: 7px;
+  background-color: none;
+}
+.menu-nav .nav-link .link-svg {
+  margin-right: 20px;
+  fill: #97a6b7;
+}
+.menu-nav .nav-link:hover {
+  background-color: #20293b;
+  color: #1492f6;
+  font-weight: bold;
+}
+.menu-nav .nav-link:hover .link-highlight-bar {
+  background-color: #1492f6;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 25px;
+  left: 35px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+.menu-btn .btn-line {
+  margin: 0 0 5px 0;
+  width: 28px;
+  height: 3px;
+  background-color: #97a6b7;
+  transition: all 0.4s ease-out;
+}
+.menu-btn.close {
+  transform: rotate(180deg);
+}
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5.5px, 4.8px);
+}
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6.5px, -5.5px);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,7 +144,7 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: pink;
+  background-color: #242e41;
 }
 
 header {

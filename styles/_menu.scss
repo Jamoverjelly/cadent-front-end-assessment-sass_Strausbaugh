@@ -1,16 +1,125 @@
-// .menu-btn {
-//   position: absolute;
-//   z-index: 3;
-//   top: 35px;
-//   left: 35px;
-//   cursor: pointer;
+// Menu
+.menu {
+  position: fixed;
+  top: 70px;
+  width: 190px;
+  height: 570px;
+  border-radius: 0.4em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: $secondary-color;
+  background-color: $primary-color;
+  visibility: hidden;
+  transform: translate3d(-100%, 0, 0);
+  @include easeOut;
 
-//   .btn-line {
-//     width: 28px;
-//     height: 3px;
-//     margin: 0 0 5px 0;
-//     background: $secondary-color;
-//     box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1),
-//       1px 1px 1px rgba(0, 0, 0, 0.5);
-//   }
-// }
+  &.show {
+    visibility: visible;
+    // Slide in from left
+    transform: translate3d(13.6%, 0, 0);
+  }
+
+  // Menu-header
+  &-header {
+    padding-top: 50px;
+    border-radius: 0.4em;
+    height: 33%;
+    text-align: center;
+    background-color: $primary-color;
+
+    .header-avatar {
+      margin: 0 auto;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      background: url(../img/cadent-logo-80x80.png);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .header-home-select {
+      .select-home-name {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 2px;
+      }
+
+      .select-home-address {
+        margin: 0;
+        font-size: 12px;
+        font-weight: lighter;
+      }
+
+      .select-arrow-down {
+        position: absolute;
+        right: 17.5%;
+        bottom: 71.2%;
+        fill: $highlight-color;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  // Menu-nav
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    height: 67%;
+    overflow: hidden;
+    list-style: none;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      transform: translate3d(-600px, 0, 0);
+      @include easeOut;
+
+      &.show {
+        // Slide in from left
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 100%;
+      height: 100%;
+      color: $secondary-color;
+      font-size: 12px;
+      text-decoration: none;
+      @include easeOut;
+
+      .link-highlight-bar {
+        margin-right: 20px;
+        height: 100%;
+        width: 7px;
+        background-color: none;
+      }
+
+      .link-svg {
+        margin-right: 20px;
+        fill: $secondary-color;
+      }
+
+      &:hover {
+        @include hover-style;
+      }
+    }
+  }
+}
